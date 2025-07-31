@@ -14,7 +14,10 @@
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio",
-    "db:seed": "ts-node --esm prisma/seed.ts"
+    "db:seed": "ts-node --esm prisma/seed.ts",
+    "vercel-build": "node vercel-build.js",
+    "deploy": "node deploy.js",
+    "deploy:prod": "node deploy.js --prod"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
