@@ -1,4 +1,4 @@
-import { Bell, User } from "lucide-react";
+import { Bell, Plus, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useState } from "react";
