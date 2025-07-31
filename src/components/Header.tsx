@@ -1,4 +1,4 @@
-import { Bell, Plus, User } from "lucide-react";
+import { Bell, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -63,7 +63,7 @@ export const Header = ({ title, subtitle, showActions = true }: HeaderProps) => 
             <Button 
               variant="ghost" 
               size="icon" 
-              className="rounded-full"
+              className="rounded-full mobile-button"
               onClick={handleNotificationClick}
             >
               <Bell size={22} />
@@ -81,7 +81,7 @@ export const Header = ({ title, subtitle, showActions = true }: HeaderProps) => 
             <Button 
               variant="ghost" 
               size="icon" 
-              className="rounded-full"
+              className="rounded-full mobile-button"
               onClick={handleProfileClick}
             >
               <User size={22} />
