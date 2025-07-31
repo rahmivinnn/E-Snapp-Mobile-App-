@@ -63,7 +63,7 @@ export const Home = () => {
   
   return (
     <motion.div 
-      className="min-h-screen bg-background pb-20"
+      className="min-h-screen bg-background pb-20 no-scroll-x"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -111,7 +111,7 @@ export const Home = () => {
       </AnimatePresence>
       
       <motion.div 
-        className="px-4 space-y-3 pb-16"
+        className="mobile-container space-y-3 pb-16"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

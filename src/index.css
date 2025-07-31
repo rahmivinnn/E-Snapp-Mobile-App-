@@ -4,34 +4,64 @@
 
 /* e-snapp Energy App Design System */
 
-/* Portrait mode optimization for web */
+/* Mobile-first responsive design */
 html, body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
   touch-action: manipulation;
-  /* Remove position fixed for better web experience */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-y: none;
-  /* Ensure proper scrolling on web */
   min-height: 100vh;
+  font-size: 16px;
 }
 
-/* Force portrait layout on web */
+/* Ensure all elements are properly sized for mobile */
+* {
+  box-sizing: border-box;
+}
+
+/* Mobile viewport fixes */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  body {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  /* Ensure buttons and interactive elements are properly sized */
+  button, [role="button"], input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+}
+
+/* Mobile landscape optimization */
 @media screen and (orientation: landscape) and (max-width: 1024px) {
   body {
-    transform: rotate(90deg);
-    transform-origin: center;
-    width: 100vh;
-    height: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
+    /* Remove problematic transform that breaks layout */
+    /* Keep natural orientation for better mobile experience */
   }
+}
+
+/* Mobile-first container styling */
+#root {
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* Responsive design for larger screens */
@@ -48,6 +78,25 @@ body {
     background: white;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     min-height: 100vh;
+  }
+}
+
+/* Additional mobile optimizations */
+@media screen and (max-width: 1024px) {
+  .px-4 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Ensure proper spacing and prevent horizontal scroll */
+  .space-y-3 > * + * {
+    margin-top: 0.75rem !important;
+  }
+  
+  /* Fix for cards and components */
+  .bg-card, .bg-background {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -165,5 +214,35 @@ body {
   
   .pt-safe {
     padding-top: env(safe-area-inset-top);
+  }
+  
+  /* Mobile-specific utilities */
+  @media screen and (max-width: 768px) {
+    .mobile-container {
+      width: 100%;
+      max-width: 100vw;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      box-sizing: border-box;
+    }
+    
+    .mobile-card {
+      width: 100%;
+      max-width: calc(100vw - 2rem);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .mobile-button {
+      min-height: 44px;
+      min-width: 44px;
+      padding: 0.75rem 1rem;
+    }
+    
+    /* Prevent horizontal scroll */
+    .no-scroll-x {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
   }
 }
